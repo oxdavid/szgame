@@ -1,0 +1,124 @@
+body {
+    height: 550px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+body h1 {
+    text-align: center;
+}
+
+#divBuy {
+    position: absolute;
+    background-color: #333344;
+    border: 1px solid gray;
+    width: 270px;
+    height: 100px;
+}
+
+#states,
+#left,
+#right,
+#contentBottomLeft,
+#contentBottomRight,
+.headerTitle {
+    float: left;
+}
+
+#currentRoom {
+    position: relative;
+    margin-left: 210px;
+}
+
+#right {
+    height: 150px;
+    overflow: auto;
+}
+
+#contentBottomRight {
+    margin-left: 110px;
+}
+
+#main {
+    width: 80%;
+    height: 80%;
+}
+
+table {
+    height: 150px;
+    cursor: hand;
+}
+
+#divBuy {
+    display: none;
+}
+
+#content,
+#operation,
+#header {
+    margin-left: 33%;
+    width: 800px;
+}
+
+#contentBottom {
+    position: absolute;
+    margin-top: 190px;
+}
+
+.address {
+    width: 83px;
+}
+
+#operation {
+    margin-left: 26.5%;
+}
+
+#content {
+    height: 400px;
+}
+
+td, th {
+    width: 110px;
+}
+
+th {
+    height: 27px;
+}
+
+td {
+    height: 17px;
+    text-align: center;
+}
+
+#popContent {
+    margin-top: 30px;
+}
+
+#popOperations {
+    margin-top: 17px;
+    margin-right: 15px;
+    text-align: right;
+}
+
+#states {
+    width: 95px;
+    margin: 0 10px 0 10px;
+}
+
+button.help {
+    width: 150px;
+    height: 27px;
+    margin-left: 24px;
+}
+
+#btnHospital {
+    margin-left: 0;
+}
+
+button.state {
+    width: 100px;
+    height: 27px;
+    margin-top: 18px;
+}

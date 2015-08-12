@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>game</title>
+    <link rel="stylesheet" href="../styles/base.css"/>
+    <script src="../scripts/jquery-1.7.1.min.js"></script>
+    <script src="../scripts/knockout-3.3.0.js"></script>
+    <script src="../scripts/jquery.poshytip.min.js"></script>
+    <script src="../scripts/toolKit.js"></script>
+    <script src="../scripts/watch.js"></script>
+    <script src="../scripts/events.js"></script>
+    <script src="../scripts/operation.js"></script>
+    <script src="../scripts/baseModel.js"></script>
+    <script src="../scripts/game.js"></script>
+    <script>
+        $(document).ready(function () {
+            initial();
+        });
+    </script>
+</head>
+<body>
+<h1>深圳求生记</h1>
+
+<div id="main">
+    <div id="header">
+        <p class="headerTitle" id="currentDay">
+            <span>  当前天数 <span id="spnValue" data-bind="text: day"></span>/100 天</span>
+        </p>
+
+        <p class="headerTitle" id="currentRoom">
+            您的房间 <span data-bind="text: room"></span>/<span data-bind="text: roomTotal"></span>
+        </p>
+    </div>
+
+    <div id="content" style="clear: both">
+
+        <div>
+            <div id="left">
+                <table id="blackMarket">
+                    <tr>
+                        <th>物品</th>
+                        <th>价格</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="states">
+                <button class="state" disabled="disabled" id="btnBuy">买进</button>
+                <button class="state" id="btnSell">卖出</button>
+                <button class="state" id="btnThrow">扔掉</button>
+            </div>
+
+            <div id="right">
+                <table id="room">
+                    <tr>
+                        <th>物品名</th>
+                        <th>买进价格</th>
+                        <th>数量</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="contentBottom">
+            <div id="contentBottomLeft">
+                <label for="money">现金流</label>
+                <input type="text" id="money" data-bind="value: money" readonly="true"/>
+                <br/>
+                <br/>
+                <label for="usury">高利贷</label>
+                <input type="text" id="usury" data-bind="value: debt" readonly="true"/>
+                <br/>
+                <br/>
+                <label for="health">健康值</label>
+                <input type="text" id="health" data-bind="value: fitness" readonly="true"/>
+                <br/>
+                <br/>
+                <label for="fame">名声值</label>
+                <input type="text" id="fame" data-bind="value: fame" readonly="true"/>
+            </div>
+            <div id="contentBottomRight">
+                <button class="address" id="easeDoor" title="水货LV"
+                        disabled="disabled" onclick="initialGoods(2,this);">东门
+                </button>
+                <button onclick="initialGoods(3,this);" class="address">罗湖口岸</button>
+                <button onclick="initialGoods(15,this);" class="address">火车站</button>
+                <button onclick="initialGoods(5,this);" class="address">向西村</button>
+                <br/>
+                <br/>
+                <button onclick="initialGoods(7,this);" class="address">CocoPark</button>
+                <button onclick="initialGoods(6,this);" class="address">华强北</button>
+                <button onclick="initialGoods(0,this);" class="address">荔枝公园</button>
+                <button onclick="initialGoods(13,this);" class="address">红树林</button>
+                <br/>
+                <br/>
+                <button onclick="initialGoods(12,this);" class="address">科技园</button>
+                <button onclick="initialGoods(14,this);" class="address">世界之窗</button>
+                <button onclick="initialGoods(8,this);" class="address">深圳大学</button>
+                <button onclick="initialGoods(11,this);" class="address">华侨城</button>
+                <br/>
+                <br/>
+                <button onclick="initialGoods(9,this);" class="address">中英街</button>
+                <button onclick="initialGoods(10,this);" class="address">较场尾</button>
+                <button onclick="initialGoods(1,this);" class="address">大芬村</button>
+                <button onclick="initialGoods(4,this);" class="address">宝安机场</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="operation">
+    <button class="help" id="btnHospital">医院</button>
+    <button class="help" id="btnBank">银行</button>
+    <button class="help" id="btnRealtor">房屋中介</button>
+    <button class="help" id="btnCharity">慈善基金会</button>
+</div>
+
+<div id="divBuy" align="center">
+
+    <div id="popContent" class="popBuy">
+        <label id="buyTitle" for="count">购买数量</label>
+        <input type="number" onkeyup="value=value.replace(/[^\d]/g,'')" oninput="checkNumber()" id="count" value="0"/>
+    </div>
+
+    <div id="popOperations" class="popBuy">
+        <button id="btnConfirm" disabled="disabled" class="buy">确定</button>
+        <button id="btnClose" onclick="hideDiv('divBuy');" class="buy">关闭</button>
+    </div>
+</div>
+
+</body>
+</html>

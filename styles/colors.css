@@ -1,0 +1,34 @@
+body {
+    color: #fb5;
+    background-color: #334;
+}
+
+button {
+    color: #f7ffe6;
+    background-color: #444444;
+    font-size: medium;
+    border: 0 solid;
+}
+
+button[disabled="disabled"] {
+    background-color: gray;
+}
+
+input {
+    background-color: #333333;
+    color: white;
+    font-size: 14px;
+    border: 1px solid gray;
+    height: 21px;
+    width: 170px;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+#main {
+    color: #fb5;
+    background-color: #334;
+}
